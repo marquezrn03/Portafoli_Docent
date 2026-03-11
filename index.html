@@ -1,241 +1,269 @@
-import React, { useState } from 'react';
-import { Home, Search, ArrowLeft, ExternalLink, ChevronRight } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolis Docent | Prof. Ronald Márquez</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons for lightweight SVG icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-const PortfolioMarquez = () => {
-  const [activeView, setActiveView] = useState('home');
-  const [selectedModule, setSelectedModule] = useState(null);
+    <!-- Custom Styles for animations & typography -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white text-gray-900 selection:bg-red-200">
 
-  const modules = [
-    {
-      id: 'filosofia',
-      unit: 'Mòdul 1',
-      title: 'Filosofia Docent',
-      subtitle: "L'excel·lència com a base",
-      image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop',
-      content: `La meva prioritat pedagògica és eliminar la latència entre la recerca de materials d'avantguarda i l'educació universitària. Operant sota un marc d'intel·ligència artificial (IA), no em limito a difondre teories consolidades; dissenyo entorns d'aprenentatge que sintetitzen la fisicoquímica, el disseny supramolecular i la intel·ligència de màquines.
-
-Els estudiants són tractats com a investigadors en fase inicial. La meva filosofia se centra en l'Aprenentatge d'Alta Densitat: cada classe i avaluació ha de transmetre un avanç directe des de la comprensió fonamental (TRL 1-2) cap a habilitats aplicades i verificables (TRL 3-4), preparant-los per als consorcis europeus d'alt rendiment.`
-    },
-    {
-      id: 'metodologia',
-      unit: 'Mòdul 2',
-      title: 'Metodologia i IA',
-      subtitle: "Intel·ligència artificial a l'aula",
-      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
-      content: `Les metodologies tradicionals són insuficients per a la velocitat de la ciència de materials moderna. El meu disseny instruccional integra Models de Llenguatge Gran (LLMs) i algoritmes de Machine Learning directament al currículum. 
-
-Ensenyo estratègies de "Opportunity Mining": els estudiants aprenen a identificar buits d'investigació crítics on les agències de finançament de la UE estan invertint actualment. A més, s'exigeix la creació de codi Python llest per a producció, optimitzat per predir les propietats de formulacions d'origen biològic, amb criteris estrictes de reproductibilitat.`
-    },
-    {
-      id: 'recerca',
-      unit: 'Mòdul 3',
-      title: 'Integració Recerca-Docència',
-      subtitle: "Materials Circulars i Pacte Verd",
-      image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop',
-      content: `La meva recerca —publicada a revistes de màxim impacte com Nature i Journal of Colloids and Interface Science— s'incorpora immediatament als mòduls de classe. 
-
-El currículum s'alinea directament amb el Pacte Verd Europeu (European Green Deal). Ensenyo arquitectura supramolecular sostenible, reducció d'energia i captura de carboni mitjançant derivats de cel·lulosa i lignina. Els estudiants aprenen el rigor matemàtic necessari per a aplicacions industrials d'alt impacte en sistemes d'emulsió avançats.`
-    },
-    {
-      id: 'avaluacio',
-      unit: 'Mòdul 4',
-      title: 'Avaluació i Evidències',
-      subtitle: "Mètriques d'impacte real",
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop',
-      content: `Els protocols d'avaluació imiten l'escrutini rigorós d'un Expert Avaluador de la UE. Identifico sistemàticament les debilitats de les hipòtesis dels estudiants (com impactes vagues o riscos d'implementació) i exigeixo una neutralització iterativa d'aquests riscos abans de la qualificació final.
-
-Les avaluacions finals requereixen que els estudiants presentin propostes en miniatura d'estil ERC/Horizonte Europa, demostrant la seva capacitat per vincular la ciència de materials amb l'Estratègia de Productes Químics per a la Sostenibilitat.`
-    },
-    {
-      id: 'visio',
-      unit: 'Mòdul 5',
-      title: 'Reflexió i Millora',
-      subtitle: "Horitzó Europa i lideratge",
-      image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop',
-      content: `La millora contínua del meu enfocament pedagògic està intrínsecament lligada a la maximització de l'adquisició de finançament institucional i la mobilitat global. El futur del currículum de materials de la UdG ha de ser internacional, interdisciplinari i altament competitiu.
-
-No només ensenyo ciència; dissenyo solucions per a prioritats polítiques urgents, formant els estudiants per executar projectes amb la màxima ambició creïble i preparant-los per interactuar en plataformes globals (ex. ACS, Gordon Research Conferences).`
-    },
-    {
-      id: 'innovacio',
-      unit: 'Mòdul 6',
-      title: 'Innovació Docent',
-      subtitle: "Estratègies del futur",
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2050&auto=format&fit=crop',
-      content: `L'aula es concep com una incubadora de projectes Erasmus+ de desenvolupament de capacitats. Fomentem ecosistemes docents on les relacions interpersonals i el lideratge científic es treballen de manera conjunta. 
-
-L'estudiant no només aprèn a formular materials, sinó a formular consorcis de recerca internacionals.`
-    }
-  ];
-
-  const handleModuleClick = (mod) => {
-    setSelectedModule(mod);
-    setActiveView('module');
-  };
-
-  const goHome = () => {
-    setActiveView('home');
-    setSelectedModule(null);
-  };
-
-  return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-red-200">
-      
-      {/* Top Navigation Bar - Mimicking the minimalist header */}
-      <header className="w-full flex justify-between items-center py-4 px-6 md:px-12 border-b border-gray-100">
-        <div className="text-sm font-semibold tracking-wide text-gray-800 uppercase">
-          Ronald Márquez <span className="text-red-500">|</span> Portafolis
+    <!-- Top Navigation Bar -->
+    <header class="w-full flex justify-between items-center py-4 px-6 md:px-12 border-b border-gray-100">
+        <div class="text-sm font-semibold tracking-wide text-gray-800 uppercase">
+            Ronald Márquez <span class="text-red-500">|</span> Portafolis
         </div>
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-600">
-          <button onClick={goHome} className="p-2 bg-gray-800 text-white rounded hover:bg-red-500 transition-colors">
-            <Home size={16} />
-          </button>
-          <button onClick={goHome} className="hover:text-red-500 transition-colors">Inici</button>
-          <span className="cursor-pointer hover:text-red-500 transition-colors">Mòdul 1</span>
-          <span className="cursor-pointer hover:text-red-500 transition-colors">Mòdul 2</span>
-          <span className="cursor-pointer hover:text-red-500 transition-colors">Mòdul 3</span>
-          <button className="p-1 hover:text-red-500 transition-colors">
-            <Search size={18} />
-          </button>
+        <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-600">
+            <button onclick="goHome()" class="p-2 bg-gray-800 text-white rounded hover:bg-red-500 transition-colors">
+                <i data-lucide="home" class="w-4 h-4"></i>
+            </button>
+            <button onclick="goHome()" class="hover:text-red-500 transition-colors">Inici</button>
+            <span class="cursor-pointer hover:text-red-500 transition-colors">Mòdul 1</span>
+            <span class="cursor-pointer hover:text-red-500 transition-colors">Mòdul 2</span>
+            <span class="cursor-pointer hover:text-red-500 transition-colors">Mòdul 3</span>
+            <button class="p-1 hover:text-red-500 transition-colors">
+                <i data-lucide="search" class="w-[18px] h-[18px]"></i>
+            </button>
         </nav>
-      </header>
+    </header>
 
-      {/* Main View: Landing Page */}
-      {activeView === 'home' && (
-        <main className="max-w-6xl mx-auto px-6 md:px-12 pt-16 pb-24">
-          
-          {/* Hero Section */}
-          <section className="flex flex-col md:flex-row items-center md:items-start justify-between gap-12 mb-24">
-            <div className="md:w-3/5 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold text-[#004a8e] mb-8 uppercase tracking-wider">
-                HOLA MUNDO!
-              </h1>
-              <p className="text-lg md:text-xl font-light leading-relaxed text-gray-700 uppercase tracking-wide">
-                SÓC EL RONALD, PROFESSOR I INVESTIGADOR PRINCIPAL EN CIÈNCIA DELS MATERIALS CIRCULARS I INTEL·LIGÈNCIA ARTIFICIAL A LA UNIVERSITAT DE GIRONA.
-              </p>
-              <div className="mt-8 flex justify-center md:justify-start">
-                <span className="inline-block border-b-2 border-gray-800 pb-1 text-sm font-semibold tracking-widest uppercase">
-                  Coneix el meu projecte docent
-                </span>
-              </div>
-            </div>
-            
-            <div className="md:w-1/3 flex justify-center md:justify-end">
-              <div className="w-64 h-80 overflow-hidden shadow-lg border-4 border-white">
-                <img 
-                  src="data:image/jpeg;base64,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" 
-                  alt="Professor Ronald Marquez" 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                />
-              </div>
-            </div>
-          </section>
-
-          {/* Grid Section */}
-          <section>
-            <h2 className="text-2xl md:text-3xl font-light text-center uppercase tracking-widest mb-12 text-gray-800">
-              Projectes dels Mòduls Docents
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {modules.map((mod) => (
-                <div key={mod.id} className="flex flex-col group cursor-pointer" onClick={() => handleModuleClick(mod)}>
-                  {/* Image Card */}
-                  <div className="relative h-64 w-full overflow-hidden shadow-md mb-3">
-                    <img 
-                      src={mod.image} 
-                      alt={mod.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    {/* Dark gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 group-hover:from-black/90 transition-colors duration-300"></div>
-                    
-                    {/* Top Left Text */}
-                    <div className="absolute top-4 left-4 text-white font-bold text-lg tracking-wide shadow-sm">
-                      Mòdul docent
-                    </div>
-                    
-                    {/* Bottom Right Text */}
-                    <div className="absolute bottom-4 right-4 text-right text-white">
-                      <div className="text-sm font-medium tracking-wider opacity-90">{mod.unit}</div>
-                      <div className="text-xl font-bold leading-tight">{mod.title}</div>
-                    </div>
-                  </div>
-                  
-                  {/* Link Below Card */}
-                  <div className="text-center text-sm font-medium text-gray-600 group-hover:text-red-500 transition-colors underline decoration-gray-300 underline-offset-4 group-hover:decoration-red-300">
-                    {mod.subtitle}
-                  </div>
+    <!-- Main View: Landing Page -->
+    <main id="home-view" class="max-w-6xl mx-auto px-6 md:px-12 pt-16 pb-24 fade-in">
+        
+        <!-- Hero Section -->
+        <section class="flex flex-col md:flex-row items-center md:items-start justify-between gap-12 mb-24">
+            <div class="md:w-3/5 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold text-[#004a8e] mb-8 uppercase tracking-wider">
+                    HOLA!
+                </h1>
+                <p class="text-lg md:text-xl font-light leading-relaxed text-gray-700 uppercase tracking-wide">
+                    SÓC EL RONALD, PROFESSOR I INVESTIGADOR PRINCIPAL EN CIÈNCIA DELS MATERIALS CIRCULARS I INTEL·LIGÈNCIA ARTIFICIAL A LA UNIVERSITAT DE GIRONA.
+                </p>
+                <div class="mt-8 flex justify-center md:justify-start">
+                    <span class="inline-block border-b-2 border-gray-800 pb-1 text-sm font-semibold tracking-widest uppercase">
+                        Coneix el meu projecte docent
+                    </span>
                 </div>
-              ))}
             </div>
-          </section>
-        </main>
-      )}
-
-      {/* Detail View: Module Content */}
-      {activeView === 'module' && selectedModule && (
-        <main className="max-w-4xl mx-auto px-6 md:px-12 pt-12 pb-24 animate-in fade-in duration-500">
-          <button 
-            onClick={goHome}
-            className="flex items-center text-sm font-semibold tracking-wider uppercase text-gray-500 hover:text-red-500 transition-colors mb-12 group"
-          >
-            <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" /> Tornar a l'inici
-          </button>
-
-          <div className="mb-12">
-            <span className="text-red-500 font-bold tracking-widest uppercase text-sm mb-2 block">
-              {selectedModule.unit}
-            </span>
-            <h1 className="text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
-              {selectedModule.title}
-            </h1>
-            <h2 className="text-xl text-gray-500 font-light border-b border-gray-200 pb-6">
-              {selectedModule.subtitle}
-            </h2>
-          </div>
-
-          <div className="relative w-full h-80 mb-12 shadow-lg">
-            <img 
-              src={selectedModule.image} 
-              alt={selectedModule.title} 
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          <article className="prose prose-lg prose-gray max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-a:text-red-500">
-            {selectedModule.content.split('\n\n').map((paragraph, idx) => (
-              <p key={idx} className="mb-6 leading-relaxed font-light text-gray-800 text-lg">
-                {paragraph}
-              </p>
-            ))}
             
-            <div className="mt-12 p-8 bg-gray-50 border-l-4 border-red-500">
-              <h3 className="text-lg font-bold mb-2 uppercase tracking-wide text-gray-900">Estratègia d'Alt Impacte</h3>
-              <p className="text-sm text-gray-600 font-light">
-                Aquest mòdul està dissenyat seguint els criteris d'Excel·lència, Impacte i Implementació dels estàndards d'avaluació de la Comissió Europea (Horizon Europe), orientat a la formació de líders científics competitius a nivell global.
-              </p>
+            <div class="md:w-1/3 flex justify-center md:justify-end">
+                <div class="w-64 h-80 overflow-hidden shadow-lg border-4 border-white">
+                    <img 
+                        src="data:image/jpeg;base64,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" 
+                        alt="Professor Ronald Marquez" 
+                        class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    />
+                </div>
             </div>
-          </article>
-        </main>
-      )}
+        </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 text-center">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-xl font-light tracking-widest uppercase mb-6">Ronald Márquez</h2>
-          <p className="text-sm text-gray-400 font-light mb-8 max-w-xl mx-auto">
-            Portafolis Docent · Universitat de Girona · Departament d'Enginyeria Química, Agrària i Tecnologia Agroalimentària.
-          </p>
-          <div className="flex justify-center gap-6 text-sm">
-            <span className="cursor-pointer hover:text-red-400 transition-colors">Currículum</span>
-            <span className="cursor-pointer hover:text-red-400 transition-colors">Publicacions (Nature, JCIS)</span>
-            <span className="cursor-pointer hover:text-red-400 transition-colors">Contacte</span>
-          </div>
+        <!-- Grid Section -->
+        <section>
+            <h2 class="text-2xl md:text-3xl font-light text-center uppercase tracking-widest mb-12 text-gray-800">
+                Projectes dels Mòduls Docents
+            </h2>
+            
+            <div id="modules-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Modules will be injected here via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Detail View: Module Content -->
+    <main id="module-view" class="hidden max-w-4xl mx-auto px-6 md:px-12 pt-12 pb-24 fade-in">
+        <button 
+            onclick="goHome()"
+            class="flex items-center text-sm font-semibold tracking-wider uppercase text-gray-500 hover:text-red-500 transition-colors mb-12 group"
+        >
+            <i data-lucide="arrow-left" class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform"></i> Tornar a l'inici
+        </button>
+
+        <div class="mb-12">
+            <span id="mod-unit" class="text-red-500 font-bold tracking-widest uppercase text-sm mb-2 block"></span>
+            <h1 id="mod-title" class="text-4xl font-extrabold text-gray-900 mb-4 leading-tight"></h1>
+            <h2 id="mod-subtitle" class="text-xl text-gray-500 font-light border-b border-gray-200 pb-6"></h2>
         </div>
-      </footer>
-    </div>
-  );
-};
 
-export default PortfolioMarquez;
+        <div class="relative w-full h-80 mb-12 shadow-lg">
+            <img 
+                id="mod-image"
+                src="" 
+                alt="" 
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <article class="prose prose-lg prose-gray max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-a:text-red-500">
+            <div id="mod-content"></div>
+            
+            <div class="mt-12 p-8 bg-gray-50 border-l-4 border-red-500">
+                <h3 class="text-lg font-bold mb-2 uppercase tracking-wide text-gray-900">Estratègia d'Alt Impacte</h3>
+                <p class="text-sm text-gray-600 font-light">
+                    Aquest mòdul està dissenyat seguint els criteris d'Excel·lència, Impacte i Implementació dels estàndards d'avaluació de la Comissió Europea (Horizon Europe), orientat a la formació de líders científics competitius a nivell global.
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-xl font-light tracking-widest uppercase mb-6">Ronald Márquez</h2>
+            <p class="text-sm text-gray-400 font-light mb-8 max-w-xl mx-auto">
+                Portafolis Docent · Universitat de Girona · Departament d'Enginyeria Química, Agrària i Tecnologia Agroalimentària.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 text-sm">
+                <span class="cursor-pointer hover:text-red-400 transition-colors">Currículum</span>
+                <span class="cursor-pointer hover:text-red-400 transition-colors">Publicacions (Nature, JCIS)</span>
+                <span class="cursor-pointer hover:text-red-400 transition-colors">Contacte</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Data Array
+        const modules = [
+            {
+                id: 'filosofia',
+                unit: 'Mòdul 1',
+                title: 'Filosofia Docent',
+                subtitle: "L'excel·lència com a base",
+                image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop',
+                content: `La meva prioritat pedagògica és eliminar la latència entre la recerca de materials d'avantguarda i l'educació universitària. Operant sota un marc d'intel·ligència artificial (IA), no em limito a difondre teories consolidades; dissenyo entorns d'aprenentatge que sintetitzen la fisicoquímica, el disseny supramolecular i la intel·ligència de màquines.\n\nEls estudiants són tractats com a investigadors en fase inicial. La meva filosofia se centra en l'Aprenentatge d'Alta Densitat: cada classe i avaluació ha de transmetre un avanç directe des de la comprensió fonamental (TRL 1-2) cap a habilitats aplicades i verificables (TRL 3-4), preparant-los per als consorcis europeus d'alt rendiment.`
+            },
+            {
+                id: 'metodologia',
+                unit: 'Mòdul 2',
+                title: 'Metodologia i IA',
+                subtitle: "Intel·ligència artificial a l'aula",
+                image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
+                content: `Les metodologies tradicionals són insuficients per a la velocitat de la ciència de materials moderna. El meu disseny instruccional integra Models de Llenguatge Gran (LLMs) i algoritmes de Machine Learning directament al currículum.\n\nEnsenyo estratègies de "Opportunity Mining": els estudiants aprenen a identificar buits d'investigació crítics on les agències de finançament de la UE estan invertint actualment. A més, s'exigeix la creació de codi Python llest per a producció, optimitzat per predir les propietats de formulacions d'origen biològic, amb criteris estrictes de reproductibilitat.`
+            },
+            {
+                id: 'recerca',
+                unit: 'Mòdul 3',
+                title: 'Integració Recerca-Docència',
+                subtitle: "Materials Circulars i Pacte Verd",
+                image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop',
+                content: `La meva recerca —publicada a revistes de màxim impacte com Nature i Journal of Colloids and Interface Science— s'incorpora immediatament als mòduls de classe.\n\nEl currículum s'alinea directament amb el Pacte Verd Europeu (European Green Deal). Ensenyo arquitectura supramolecular sostenible, reducció d'energia i captura de carboni mitjançant derivats de cel·lulosa i lignina. Els estudiants aprenen el rigor matemàtic necessari per a aplicacions industrials d'alt impacte en sistemes d'emulsió avançats.`
+            },
+            {
+                id: 'avaluacio',
+                unit: 'Mòdul 4',
+                title: 'Avaluació i Evidències',
+                subtitle: "Mètriques d'impacte real",
+                image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop',
+                content: `Els protocols d'avaluació imiten l'escrutini rigorós d'un Expert Avaluador de la UE. Identifico sistemàticament les debilitats de les hipòtesis dels estudiants (com impactes vagues o riscos d'implementació) i exigeixo una neutralització iterativa d'aquests riscos abans de la qualificació final.\n\nLes avaluacions finals requereixen que els estudiants presentin propostes en miniatura d'estil ERC/Horizonte Europa, demostrant la seva capacitat per vincular la ciència de materials amb l'Estratègia de Productes Químics per a la Sostenibilitat.`
+            },
+            {
+                id: 'visio',
+                unit: 'Mòdul 5',
+                title: 'Reflexió i Millora',
+                subtitle: "Horitzó Europa i lideratge",
+                image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop',
+                content: `La millora contínua del meu enfocament pedagògic està intrínsecament lligada a la maximització de l'adquisició de finançament institucional i la mobilitat global. El futur del currículum de materials de la UdG ha de ser internacional, interdisciplinari i altament competitiu.\n\nNo només ensenyo ciència; dissenyo solucions per a prioritats polítiques urgents, formant els estudiants per executar projectes amb la màxima ambició creïble i preparant-los per interactuar en plataformes globals (ex. ACS, Gordon Research Conferences).`
+            },
+            {
+                id: 'innovacio',
+                unit: 'Mòdul 6',
+                title: 'Innovació Docent',
+                subtitle: "Estratègies del futur",
+                image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2050&auto=format&fit=crop',
+                content: `L'aula es concep com una incubadora de projectes Erasmus+ de desenvolupament de capacitats. Fomentem ecosistemes docents on les relacions interpersonals i el lideratge científic es treballen de manera conjunta.\n\nL'estudiant no només aprèn a formular materials, sinó a formular consorcis de recerca internacionals.`
+            }
+        ];
+
+        // Render Grid
+        const gridContainer = document.getElementById('modules-grid');
+
+        modules.forEach(mod => {
+            const cardHTML = `
+                <div class="flex flex-col group cursor-pointer" onclick="showModule('${mod.id}')">
+                    <div class="relative h-64 w-full overflow-hidden shadow-md mb-3">
+                        <img 
+                            src="${mod.image}" 
+                            alt="${mod.title}"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 group-hover:from-black/90 transition-colors duration-300"></div>
+                        <div class="absolute top-4 left-4 text-white font-bold text-lg tracking-wide shadow-sm">
+                            Mòdul docent
+                        </div>
+                        <div class="absolute bottom-4 right-4 text-right text-white">
+                            <div class="text-sm font-medium tracking-wider opacity-90">${mod.unit}</div>
+                            <div class="text-xl font-bold leading-tight">${mod.title}</div>
+                        </div>
+                    </div>
+                    <div class="text-center text-sm font-medium text-gray-600 group-hover:text-red-500 transition-colors underline decoration-gray-300 underline-offset-4 group-hover:decoration-red-300">
+                        ${mod.subtitle}
+                    </div>
+                </div>
+            `;
+            gridContainer.insertAdjacentHTML('beforeend', cardHTML);
+        });
+
+        // Navigation Functions
+        const homeView = document.getElementById('home-view');
+        const moduleView = document.getElementById('module-view');
+
+        window.showModule = function(moduleId) {
+            const mod = modules.find(m => m.id === moduleId);
+            if (!mod) return;
+
+            // Populate data
+            document.getElementById('mod-unit').innerText = mod.unit;
+            document.getElementById('mod-title').innerText = mod.title;
+            document.getElementById('mod-subtitle').innerText = mod.subtitle;
+            
+            const modImage = document.getElementById('mod-image');
+            modImage.src = mod.image;
+            modImage.alt = mod.title;
+
+            // Split content into paragraphs
+            const contentDiv = document.getElementById('mod-content');
+            const paragraphsHTML = mod.content.split('\n\n').map(p => 
+                `<p class="mb-6 leading-relaxed font-light text-gray-800 text-lg">${p}</p>`
+            ).join('');
+            contentDiv.innerHTML = paragraphsHTML;
+
+            // Switch views
+            homeView.classList.add('hidden');
+            moduleView.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        window.goHome = function() {
+            moduleView.classList.add('hidden');
+            homeView.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+</body>
+</html>
