@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolis Docent | Prof. Ronald Márquez</title>
+    <title>Portafolis Docent DUFI | Prof. Ronald Márquez</title>
     
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -34,16 +34,16 @@
     <!-- Top Navigation Bar -->
     <header class="w-full flex justify-between items-center py-4 px-6 md:px-12 border-b border-gray-100">
         <div class="text-sm font-semibold tracking-wide text-gray-800 uppercase">
-            Ronald Márquez <span class="text-red-500">|</span> Portafolis
+            Ronald Márquez <span class="text-red-500">|</span> Portafolis DUFI
         </div>
         <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-600">
             <button onclick="goHome()" class="p-2 bg-gray-800 text-white rounded hover:bg-red-500 transition-colors">
                 <i data-lucide="home" class="w-4 h-4"></i>
             </button>
             <button onclick="goHome()" class="hover:text-red-500 transition-colors">Inici</button>
-            <span class="cursor-pointer hover:text-red-500 transition-colors">Mòdul 1</span>
-            <span class="cursor-pointer hover:text-red-500 transition-colors">Mòdul 2</span>
-            <span class="cursor-pointer hover:text-red-500 transition-colors">Mòdul 3</span>
+            <span class="cursor-pointer hover:text-red-500 transition-colors">Punt de Partida</span>
+            <span class="cursor-pointer hover:text-red-500 transition-colors">Evidències</span>
+            <span class="cursor-pointer hover:text-red-500 transition-colors">Reflexió General</span>
             <button class="p-1 hover:text-red-500 transition-colors">
                 <i data-lucide="search" class="w-[18px] h-[18px]"></i>
             </button>
@@ -57,14 +57,14 @@
         <section class="flex flex-col md:flex-row items-center md:items-start justify-between gap-12 mb-24">
             <div class="md:w-3/5 text-center md:text-left">
                 <h1 class="text-4xl md:text-5xl font-bold text-[#004a8e] mb-8 uppercase tracking-wider">
-                    HOLA MUNDO!
+                    PORTAFOLIS DOCENT
                 </h1>
                 <p class="text-lg md:text-xl font-light leading-relaxed text-gray-700 uppercase tracking-wide">
-                    SÓC EL RONALD, PROFESSOR LECTOR: CIÈNCIA DELS MATERIALS CIRCULARS I INTEL·LIGÈNCIA ARTIFICIAL A LA UNIVERSITAT DE GIRONA.
+                    SÓC EL RONALD MÁRQUEZ, PROFESSOR LECTOR A L'ESCOLA POLITÈCNICA SUPERIOR (UDG). AQUEST ÉS EL MEU PROCÉS D'APRENENTATGE I DESENVOLUPAMENT PROFESSIONAL EN EL MARC DEL PROGRAMA DUFI.
                 </p>
                 <div class="mt-8 flex justify-center md:justify-start">
                     <span class="inline-block border-b-2 border-gray-800 pb-1 text-sm font-semibold tracking-widest uppercase">
-                        Coneix el meu projecte docent
+                        Explora les meves evidències i reflexions
                     </span>
                 </div>
             </div>
@@ -83,7 +83,7 @@
         <!-- Grid Section -->
         <section>
             <h2 class="text-2xl md:text-3xl font-light text-center uppercase tracking-widest mb-12 text-gray-800">
-                Projectes dels Mòduls Docents
+                Estructura del Portafolis (DUFI)
             </h2>
             
             <div id="modules-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -116,13 +116,13 @@
             />
         </div>
 
-        <article class="prose prose-lg prose-gray max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-a:text-red-500">
+        <article class="prose prose-lg prose-gray max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-a:text-red-500 prose-strong:text-gray-900">
             <div id="mod-content"></div>
             
             <div class="mt-12 p-8 bg-gray-50 border-l-4 border-red-500">
-                <h3 class="text-lg font-bold mb-2 uppercase tracking-wide text-gray-900">Estratègia d'Alt Impacte</h3>
-                <p class="text-sm text-gray-600 font-light">
-                    Aquest mòdul està dissenyat seguint els criteris d'Excel·lència, Impacte i Implementació dels estàndards d'avaluació de la Comissió Europea (Horizon Europe), orientat a la formació de líders científics competitius a nivell global.
+                <h3 class="text-lg font-bold mb-2 uppercase tracking-wide text-gray-900">Competència Docent Assolida</h3>
+                <p id="mod-competence" class="text-sm text-gray-600 font-light">
+                    <!-- Dynamically injected -->
                 </p>
             </div>
         </article>
@@ -133,12 +133,12 @@
         <div class="max-w-4xl mx-auto px-6">
             <h2 class="text-xl font-light tracking-widest uppercase mb-6">Ronald Márquez</h2>
             <p class="text-sm text-gray-400 font-light mb-8 max-w-xl mx-auto">
-                Portafolis Docent · Universitat de Girona · Departament d'Enginyeria Química, Agrària i Tecnologia Agroalimentària.
+                Portafolis Docent · Formació DUFI · Universitat de Girona · Departament d'Enginyeria Química, Agrària i Tecnologia Agroalimentària.
             </p>
             <div class="flex flex-wrap justify-center gap-6 text-sm">
-                <span class="cursor-pointer hover:text-red-400 transition-colors">Currículum</span>
-                <span class="cursor-pointer hover:text-red-400 transition-colors">Publicacions (Nature, JCIS)</span>
-                <span class="cursor-pointer hover:text-red-400 transition-colors">Contacte</span>
+                <span class="cursor-pointer hover:text-red-400 transition-colors">ORCID: 0000-0001-6003-7487</span>
+                <span class="cursor-pointer hover:text-red-400 transition-colors">Scopus ID: 57233940100</span>
+                <span class="cursor-pointer hover:text-red-400 transition-colors">Contacte UdG</span>
             </div>
         </div>
     </footer>
@@ -148,55 +148,61 @@
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Data Array
+        // Data Array - RESTRUCTURED FOR DUFI GUIDELINES
         const modules = [
             {
-                id: 'filosofia',
-                unit: 'Mòdul 1',
-                title: 'Filosofia Docent',
-                subtitle: "L'excel·lència com a base",
-                image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop',
-                content: `La meva prioritat pedagògica és eliminar la latència entre la recerca de materials d'avantguarda i l'educació universitària. Operant sota un marc d'intel·ligència artificial (IA), no em limito a difondre teories consolidades; dissenyo entorns d'aprenentatge que sintetitzen la fisicoquímica, el disseny supramolecular i la intel·ligència de màquines.\n\nEls estudiants són tractats com a investigadors en fase inicial. La meva filosofia se centra en l'Aprenentatge d'Alta Densitat: cada classe i avaluació ha de transmetre un avanç directe des de la comprensió fonamental (TRL 1-2) cap a habilitats aplicades i verificables (TRL 3-4), preparant-los per als consorcis europeus d'alt rendiment.`
-            },
-            {
-                id: 'metodologia',
-                unit: 'Mòdul 2',
-                title: 'Metodologia i IA',
-                subtitle: "Intel·ligència artificial a l'aula",
-                image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
-                content: `Les metodologies tradicionals són insuficients per a la velocitat de la ciència de materials moderna. El meu disseny instruccional integra Models de Llenguatge Gran (LLMs) i algoritmes de Machine Learning directament al currículum.\n\nEnsenyo estratègies de "Opportunity Mining": els estudiants aprenen a identificar buits d'investigació crítics on les agències de finançament de la UE estan invertint actualment. A més, s'exigeix la creació de codi Python llest per a producció, optimitzat per predir les propietats de formulacions d'origen biològic, amb criteris estrictes de reproductibilitat.`
-            },
-            {
-                id: 'recerca',
-                unit: 'Mòdul 3',
-                title: 'Integració Recerca-Docència',
-                subtitle: "Materials Circulars i Pacte Verd",
-                image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop',
-                content: `La meva recerca —publicada a revistes de màxim impacte com Nature i Journal of Colloids and Interface Science— s'incorpora immediatament als mòduls de classe.\n\nEl currículum s'alinea directament amb el Pacte Verd Europeu (European Green Deal). Ensenyo arquitectura supramolecular sostenible, reducció d'energia i captura de carboni mitjançant derivats de cel·lulosa i lignina. Els estudiants aprenen el rigor matemàtic necessari per a aplicacions industrials d'alt impacte en sistemes d'emulsió avançats.`
-            },
-            {
-                id: 'avaluacio',
-                unit: 'Mòdul 4',
-                title: 'Avaluació i Evidències',
-                subtitle: "Mètriques d'impacte real",
-                image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop',
-                content: `Els protocols d'avaluació imiten l'escrutini rigorós d'un Expert Avaluador de la UE. Identifico sistemàticament les debilitats de les hipòtesis dels estudiants (com impactes vagues o riscos d'implementació) i exigeixo una neutralització iterativa d'aquests riscos abans de la qualificació final.\n\nLes avaluacions finals requereixen que els estudiants presentin propostes en miniatura d'estil ERC/Horizonte Europa, demostrant la seva capacitat per vincular la ciència de materials amb l'Estratègia de Productes Químics per a la Sostenibilitat.`
-            },
-            {
-                id: 'visio',
-                unit: 'Mòdul 5',
-                title: 'Reflexió i Millora',
-                subtitle: "Horitzó Europa i lideratge",
+                id: 'punt-partida',
+                unit: 'Fase Inicial',
+                title: 'Punt de Partida',
+                subtitle: 'Expectatives, reptes i integració a la UdG',
                 image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop',
-                content: `La millora contínua del meu enfocament pedagògic està intrínsecament lligada a la maximització de l'adquisició de finançament institucional i la mobilitat global. El futur del currículum de materials de la UdG ha de ser internacional, interdisciplinari i altament competitiu.\n\nNo només ensenyo ciència; dissenyo solucions per a prioritats polítiques urgents, formant els estudiants per executar projectes amb la màxima ambició creïble i preparant-los per interactuar en plataformes globals (ex. ACS, Gordon Research Conferences).`
+                content: `**La meva arribada a la Universitat de Girona** (setembre 2025) com a Professor Lector representa una fita apassionant en la meva carrera. Després d'una trajectòria internacional —passant per la docència a la Universidad de Los Andes (Veneçuela), i la recerca d'alt nivell a NC State University (EUA) i TotalEnergies (França)— aterro a Catalunya amb una forta base en físico-química, intel·ligència artificial i ciència de materials.\n\n**Necessitats i expectatives d'aprenentatge:**\nEn iniciar el programa de Docència Universitària Formació Inicial (DUFI), la meva principal necessitat és comprendre i adaptar-me plenament a l'Espai Europeu d'Educació Superior (EEES) i al model educatiu específic de la UdG. Necessito fer una transició conscient des d'una visió docent potser més tradicional, cap a una avaluació totalment orientada a l'adquisició de competències transversals i específiques.\n\n**Objectius:**\nEl meu objectiu principal en aquest procés formatiu és aprendre a integrar la meva recerca puntera (materials circulars, emulsions, bio-productes) de forma natural i pedagògicament sòlida a l'aula d'Enginyeria Química. Vull esbrinar com transmetre aquesta passió als estudiants no només mitjançant continguts, sinó dissenyant activitats d'aprenentatge actiu que els converteixin en pensadors crítics i solucionadors de problemes complexos.`,
+                competence: "Identificació del propi perfil docent, detecció de necessitats formatives i alineament amb el context institucional de la Universitat de Girona i l'EEES."
             },
             {
-                id: 'innovacio',
-                unit: 'Mòdul 6',
-                title: 'Innovació Docent',
-                subtitle: "Estratègies del futur",
+                id: 'evidencia-1',
+                unit: 'Evidència 01',
+                title: 'Estratègia PBL i el Mètode RAIS',
+                subtitle: "L'estudiant com a creador de productes",
+                image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop',
+                content: `**Context i descripció de l'evidència:**\nDurant la meva etapa com a professor a la Universidad de Los Andes (2009-2013, amb publicacions docents recents el 2023), vaig crear i implementar la metodologia RAIS (*Reproducción de un Ambiente de Innovación en el Salón de clase*). Aquesta estratègia d'Aprenentatge Basat en Productes (PBL) encoratjava els estudiants d'Enginyeria Química a desenvolupar un producte des de la idea inicial fins a l'escala de laboratori, incloent-hi l'anàlisi de tota la cadena de valor (reflectit en l'article publicat a *Educación Química* el 2016 i *Education for Chemical Engineers* el 2023).\n\n**Reflexió sobre l'aprenentatge assolit:**\nL'anàlisi d'aquesta evidència em fa veure que la motivació de l'alumne es multiplica quan el coneixement s'aplica a una realitat tangible i industrial. Com a docent, vaig aprendre que el meu rol no és dictar teoria, sinó actuar com a "facilitador d'innovació". El repte que em plantejo ara, i el que considero un progrés en la meva pràctica docent, és com traslladar aquesta experiència emprenedora a les aules de la UdG, adaptant-la als nous paradigmes de sostenibilitat (economia circular i residus) propis del *Green Deal* europeu que investigo actualment.`,
+                competence: "Capacitat per dissenyar i aplicar metodologies d'aprenentatge actiu (PBL) que apropen el món professional a l'aula, fomentant l'emprenedoria de l'alumnat."
+            },
+            {
+                id: 'evidencia-2',
+                unit: 'Evidència 02',
+                title: 'Intel·ligència Artificial a l\'Aula',
+                subtitle: 'De la memorització al pensament crític',
+                image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
+                content: `**Context i descripció de l'evidència:**\nEl 2025 m'he integrat a la *Xarxa d'intel·ligència artificial i docència universitària* de la UdG (ICE). Al mateix temps, he estat pioner en l'aplicació de Models de Llenguatge (LLMs) en la docència de la química, publicant un article innovador al *Journal of Chemical Education* (2025). Aquesta evidència es basa en el disseny d'una activitat on els estudiants utilitzen la IA per crear meta-anàlisis "vius" (*living meta-analysis*) sobre emulsions Pickering.\n\n**Reflexió sobre l'aprenentatge assolit:**\nIncloure aquesta evidència al meu portafolis respon a una reflexió profunda: com hem d'avaluar en l'era de ChatGPT? He après que intentar "prohibir" la IA és fútil i antipedagògic. El meu desenvolupament professional ha passat per reformular completament la meva manera d'avaluar. Ara no exigeixo que l'estudiant resolgui mecànicament un problema (ho fa la màquina), sinó que desenvolupi el **pensament crític** per validar l'output de la IA, formular les preguntes correctes i extreure patrons bibliomètrics. La docència ja no tracta sobre trobar dades, sinó sobre discernir la qualitat científica.`,
+                competence: "Integració crítica, ètica i didàctica de les eines d'Intel·ligència Artificial (LLMs) per a la transformació de l'avaluació i la promoció del pensament crític."
+            },
+            {
+                id: 'evidencia-3',
+                unit: 'Evidència 03',
+                title: 'Lideratge, Direcció i Mentoria',
+                subtitle: 'Adaptant el guiatge a cada nivell formatiu',
                 image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2050&auto=format&fit=crop',
-                content: `L'aula es concep com una incubadora de projectes Erasmus+ de desenvolupament de capacitats. Fomentem ecosistemes docents on les relacions interpersonals i el lideratge científic es treballen de manera conjunta.\n\nL'estudiant no només aprèn a formular materials, sinó a formular consorcis de recerca internacionals.`
+                content: `**Context i descripció de l'evidència:**\nAquest bloc recull la meva experiència dirigint activitats de recerca en diferents nivells educatius: des dels Treballs de Grau de L. Meza i J. Fernández a la ULA (2018-2019), fins a l'acompanyament com a co-mentor de les tesis doctorals de nivell superior d'I. Urdaneta i M. Lendewig a North Carolina State University (2023-2024).\n\n**Reflexió sobre l'aprenentatge assolit:**\nGuiar estudiants m'ha ofert un mirall brutalment honest de la meva pràctica pedagògica. He après, sovint basant-me en assaig i error, que la mentoria no és una "talla única". Amb els estudiants de grau, la meva tasca ha de ser de bastimentada (*scaffolding*), proporcionant estructures clares. En canvi, amb els doctorands, el meu rol evoluciona cap al repte intel·lectual constant, fomentant la seva independència per debatre hipòtesis de materials biomaterials. Aquest procés d'autoregulació m'ha permès desenvolupar una gran empatia docent que considero fonamental per atendre la diversitat a les aules de grau i màster de la UdG.`,
+                competence: "Adaptabilitat del lideratge docent i capacitat per acompanyar, mentoritzar i guiar estudiants de diferents nivells acadèmics en el procés de recerca científica."
+            },
+            {
+                id: 'reflexio-general',
+                unit: 'Fase Final',
+                title: 'Reflexió General',
+                subtitle: 'Avaluació del procés d\'aprenentatge (DUFI)',
+                image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop',
+                content: `**Comparant l'inici amb els objectius assolits:**\nQuan vaig iniciar aquest procés i vaig redactar el "Punt de partida", la meva principal preocupació era purament metodològica i d'adaptació al sistema (com fer classes a la UdG, com adaptar-me a l'EEES). Després d'aquest viatge reflexiu, de recopilar i analitzar les meves experiències prèvies (el mètode RAIS, l'ús avançat de la IA i les meves mentories), he fet un canvi de xip fonamental.\n\nHe entès que el meu valor com a docent a la UdG no rau només a "adaptar-me" al que ja existeix, sinó a **aportar la meva expertesa global**. Les evidències mostren que les meves fortaleses resideixen en la capacitat de connectar la física i química de materials amb necessitats industrials reals (teixits i embalatges sostenibles) i amb tecnologies disruptives (IA).\n\n**Punts forts i reptes de futur:**\nDetecto que la meva passió pot contagiar l'esperit d'investigació. Tanmateix, a través d'aquesta autoavaluació he detectat aspectes on he de centrar els meus esforços per millorar: necessito polir el disseny de rúbriques d'avaluació transparents i assegurar-me que, malgrat la meva alta exigència investigadora, no deixo cap estudiant enrere en els fonaments bàsics. Aquest portafolis no és el final, sinó el manual de navegació per a la meva carrera com a docent reflexiu.`,
+                competence: "Assoliment del pensament reflexiu, l'autoavaluació crítica i el compromís ètic amb la millora contínua de la pràctica pedagògica."
+            },
+            {
+                id: 'visio-excelencia',
+                unit: 'Visió Docent',
+                title: 'Excel·lència i Connexió Industrial',
+                subtitle: 'Més enllà de l\'aula',
+                image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop',
+                content: `Com a complement al meu procés d'autoformació, vull plasmar la visió que guia el meu dia a dia. La meva prioritat pedagògica és eliminar la latència entre la recerca de materials d'avantguarda i l'educació universitària. Com reflecteixen els projectes competitius (ArtInNano, CELLWOIL, etc.) on participo, la química actual ha de respondre immediatament a problemes reals.\n\nFormar en el segle XXI implica que els estudiants siguin capaços de veure la relació entre una equació d'una emulsió termodinàmica i les directives mediambientals d'Europa. Aquest és el meu repte com a Professor Lector a la UdG: integrar plenament aquest pensament macro (indústria, ecologia, IA) al micro (el laboratori i les pràctiques d'aula), generant professionals no només altament qualificats, sinó profundament compromesos amb l'entorn.`,
+                competence: "Integració de la pràctica docent amb la transferència de coneixement, alineant els resultats d'aprenentatge amb els Objectius de Desenvolupament Sostenible (ODS)."
             }
         ];
 
@@ -214,10 +220,9 @@
                         />
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 group-hover:from-black/90 transition-colors duration-300"></div>
                         <div class="absolute top-4 left-4 text-white font-bold text-lg tracking-wide shadow-sm">
-                            Mòdul docent
+                            ${mod.unit}
                         </div>
                         <div class="absolute bottom-4 right-4 text-right text-white">
-                            <div class="text-sm font-medium tracking-wider opacity-90">${mod.unit}</div>
                             <div class="text-xl font-bold leading-tight">${mod.title}</div>
                         </div>
                     </div>
@@ -241,16 +246,18 @@
             document.getElementById('mod-unit').innerText = mod.unit;
             document.getElementById('mod-title').innerText = mod.title;
             document.getElementById('mod-subtitle').innerText = mod.subtitle;
+            document.getElementById('mod-competence').innerText = mod.competence;
             
             const modImage = document.getElementById('mod-image');
             modImage.src = mod.image;
             modImage.alt = mod.title;
 
-            // Split content into paragraphs
+            // Split content into paragraphs and handle basic markdown-like bolding
             const contentDiv = document.getElementById('mod-content');
-            const paragraphsHTML = mod.content.split('\n\n').map(p => 
-                `<p class="mb-6 leading-relaxed font-light text-gray-800 text-lg">${p}</p>`
-            ).join('');
+            const paragraphsHTML = mod.content.split('\n\n').map(p => {
+                let formattedText = p.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                return `<p class="mb-6 leading-relaxed font-light text-gray-800 text-lg">${formattedText}</p>`
+            }).join('');
             contentDiv.innerHTML = paragraphsHTML;
 
             // Switch views
