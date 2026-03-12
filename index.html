@@ -41,9 +41,9 @@
                 <i data-lucide="home" class="w-4 h-4"></i>
             </button>
             <button onclick="goHome()" class="hover:text-red-500 transition-colors">Inici</button>
-            <span class="cursor-pointer hover:text-red-500 transition-colors">Punt de Partida</span>
-            <span class="cursor-pointer hover:text-red-500 transition-colors">Evidències</span>
-            <span class="cursor-pointer hover:text-red-500 transition-colors">Reflexió General</span>
+            <button onclick="showModule('punt-partida')" class="hover:text-red-500 transition-colors">Punt de Partida</button>
+            <button onclick="scrollToGrid()" class="hover:text-red-500 transition-colors">Evidències</button>
+            <button onclick="showModule('reflexio-general')" class="hover:text-red-500 transition-colors">Reflexió General</button>
             <button class="p-1 hover:text-red-500 transition-colors">
                 <i data-lucide="search" class="w-[18px] h-[18px]"></i>
             </button>
@@ -63,9 +63,9 @@
                     SÓC EL RONALD MÁRQUEZ, PROFESSOR LECTOR A L'ESCOLA POLITÈCNICA SUPERIOR (UDG). AQUEST ÉS EL MEU PROCÉS D'APRENENTATGE I DESENVOLUPAMENT PROFESSIONAL EN EL MARC DEL PROGRAMA DUFI.
                 </p>
                 <div class="mt-8 flex justify-center md:justify-start">
-                    <span class="inline-block border-b-2 border-gray-800 pb-1 text-sm font-semibold tracking-widest uppercase">
+                    <button onclick="scrollToGrid()" class="inline-block border-b-2 border-gray-800 pb-1 text-sm font-semibold tracking-widest uppercase hover:text-red-500 hover:border-red-500 transition-colors">
                         Explora les meves evidències i reflexions
-                    </span>
+                    </button>
                 </div>
             </div>
             
@@ -81,7 +81,7 @@
         </section>
 
         <!-- Grid Section -->
-        <section>
+        <section id="modules-section">
             <h2 class="text-2xl md:text-3xl font-light text-center uppercase tracking-widest mb-12 text-gray-800">
                 Estructura del Portafolis (DUFI)
             </h2>
@@ -136,9 +136,9 @@
                 Portafolis Docent · Formació DUFI · Universitat de Girona · Departament d'Enginyeria Química, Agrària i Tecnologia Agroalimentària.
             </p>
             <div class="flex flex-wrap justify-center gap-6 text-sm">
-                <span class="cursor-pointer hover:text-red-400 transition-colors">ORCID: 0000-0001-6003-7487</span>
-                <span class="cursor-pointer hover:text-red-400 transition-colors">Scopus ID: 57233940100</span>
-                <span class="cursor-pointer hover:text-red-400 transition-colors">Contacte UdG</span>
+                <a href="https://orcid.org/0000-0001-6003-7487" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors">ORCID: 0000-0001-6003-7487</a>
+                <a href="https://www.scopus.com/authid/detail.uri?authorId=57233940100" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors">Scopus ID: 57233940100</a>
+                <a href="https://www.udg.edu/ca/directori/pagina-personal?ID=436360" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors">Contacte UdG</a>
             </div>
         </div>
     </footer>
@@ -174,7 +174,7 @@
                 title: 'Intel·ligència Artificial a l\'Aula',
                 subtitle: 'De la memorització al pensament crític',
                 image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
-                content: `**Context i descripció de l'evidència:**\nEl 2025 m'he integrat a la *Xarxa d'intel·ligència artificial i docència universitària* de la UdG (ICE). Al mateix temps, he estat pioner en l'aplicació de Models de Llenguatge (LLMs) en la docència de la química, publicant un article innovador al *Journal of Chemical Education* (2025). Aquesta evidència es basa en el disseny d'una activitat on els estudiants utilitzen la IA per crear meta-anàlisis "vius" (*living meta-analysis*) sobre emulsions Pickering.\n\n**Reflexió sobre l'aprenentatge assolit:**\nIncloure aquesta evidència al meu portafolis respon a una reflexió profunda: com hem d'avaluar en l'era de ChatGPT? He après que intentar "prohibir" la IA és fútil i antipedagògic. El meu desenvolupament professional ha passat per reformular completament la meva manera d'avaluar. Ara no exigeixo que l'estudiant resolgui mecànicament un problema (ho fa la màquina), sinó que desenvolupi el **pensament crític** per validar l'output de la IA, formular les preguntes correctes i extreure patrons bibliomètrics. La docència ja no tracta sobre trobar dades, sinó sobre discernir la qualitat científica.`,
+                content: `**Context i descripció de l'evidència:**\nEl 2025 m'he integrat a la *Xarxa d'intel·ligència artificial i docència universitària* de la UdG (ICE). Al mateix temps, he estat pioner en l'aplicació de Models de Llenguatge (LLMs) en la docència de la química, publicant un article innovador al *Journal of Chemical Education* (2025). Aquesta evidència es basa en el disseny d'una activitat on els estudiants utilitzen la IA per crear meta-anàlisis "vius" (*living meta-analysis*) sobre emulsions Pickering.\n\n**Reflexió sobre l'aprenentatge assolit:**\nIncloure aquesta evidència al meu portafolis respon a una reflexió profunda: com hem d'avaluar en l'era de ChatGPT? He aprendido que intentar "prohibir" la IA és fútil i antipedagògic. El meu desenvolupament professional ha passat per reformular completament la meva manera d'avaluar. Ara no exigeixo que l'estudiant resolgui mecànicament un problema (ho fa la màquina), sinó que desenvolupi el **pensament crític** per validar l'output de la IA, formular les preguntes correctes i extreure patrons bibliomètrics. La docència ja no tracta sobre trobar dades, sinó sobre discernir la qualitat científica.`,
                 competence: "Integració crítica, ètica i didàctica de les eines d'Intel·ligència Artificial (LLMs) per a la transformació de l'avaluació i la promoció del pensament crític."
             },
             {
@@ -252,10 +252,14 @@
             modImage.src = mod.image;
             modImage.alt = mod.title;
 
-            // Split content into paragraphs and handle basic markdown-like bolding
+            // Split content into paragraphs and handle markdown formatting
             const contentDiv = document.getElementById('mod-content');
             const paragraphsHTML = mod.content.split('\n\n').map(p => {
+                // First handle double asterisks for bold text
                 let formattedText = p.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                // Then handle single asterisks for italic text
+                formattedText = formattedText.replace(/\*(.*?)\*/g, '<em>$1</em>');
+                
                 return `<p class="mb-6 leading-relaxed font-light text-gray-800 text-lg">${formattedText}</p>`
             }).join('');
             contentDiv.innerHTML = paragraphsHTML;
@@ -270,6 +274,19 @@
             moduleView.classList.add('hidden');
             homeView.classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        window.scrollToGrid = function() {
+            // First ensure we are on the home view
+            if (homeView.classList.contains('hidden')) {
+                moduleView.classList.add('hidden');
+                homeView.classList.remove('hidden');
+            }
+            
+            // Allow a small delay for the DOM to render the home view before scrolling
+            setTimeout(() => {
+                document.getElementById('modules-section').scrollIntoView({ behavior: 'smooth' });
+            }, 50);
         };
     </script>
 </body>
