@@ -42,7 +42,7 @@
             </button>
             <button onclick="goHome()" class="hover:text-red-500 transition-colors">Inici</button>
             <button onclick="showModule('punt-partida')" class="hover:text-red-500 transition-colors">Punt de Partida</button>
-            <button onclick="scrollToGrid()" class="hover:text-red-500 transition-colors">Evidències</button>
+            <button onclick="scrollToGrid()" class="hover:text-red-500 transition-colors">Evidències i Unitats</button>
             <button onclick="showModule('reflexio-general')" class="hover:text-red-500 transition-colors">Reflexió General</button>
             <button class="p-1 hover:text-red-500 transition-colors">
                 <i data-lucide="search" class="w-[18px] h-[18px]"></i>
@@ -120,7 +120,7 @@
             <div id="mod-content"></div>
             
             <div class="mt-12 p-8 bg-gray-50 border-l-4 border-red-500">
-                <h3 class="text-lg font-bold mb-2 uppercase tracking-wide text-gray-900">Competència Docent Assolida</h3>
+                <h3 class="text-lg font-bold mb-2 uppercase tracking-wide text-gray-900">Competència Docent Assolida / Objectius</h3>
                 <p id="mod-competence" class="text-sm text-gray-600 font-light">
                     <!-- Dynamically injected -->
                 </p>
@@ -148,7 +148,7 @@
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Data Array - UPDATED HUMBLE CONTENT IN CATALAN (including new UNESCO/AI/SDG info)
+        // Data Array - UPDATED CONTENT IN CATALAN (including DUFI Unit 4 full task)
         const modules = [
             {
                 id: 'punt-partida',
@@ -165,7 +165,7 @@
                 title: 'Estratègia PBL i el Mètode RAIS',
                 subtitle: "L'estudiant com a creador de productes",
                 image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop',
-                content: `**Context i descripció de l'evidència:**\nDurant la meva etapa com a professor a la Universidad de Los Andes (2009-2013, amb publicacions docents recents el 2023), vaig participar en el disseny i implementació de la metodologia RAIS (*Reproducción de un Ambiente de Innovación en el Salón de clase*). Aquesta estratègia d'Aprenentatge Basat en Productes (PBL) encoratjava els estudiants d'Enginyeria Química a desenvolupar un producte des de la idea inicial fins a l'escala de laboratori, incloent-hi l'anàlisi de tota la cadena de valor (reflectit en l'article publicat a *Educación Química* el 2016 i *Education for Chemical Engineers* el 2023).\n\n**Reflexió sobre l'aprenentatge assolit:**\nL'anàlisi d'aquesta evidència em fa veure que la motivació de l'alumne creix quan el coneixement s'aplica a una realitat tangible i industrial. Com a docent, vaig aprendre que el meu rol pot enfocar-se com a "facilitador" més que com a transmissor de teoria. El repte que em plantejo ara, i el que considero un pas més en la meva pràctica docent, és com traslladar aquesta experiència d'aula a la UdG, adaptant-la als nous paradigmes de sostenibilitat (economia circular i residus) propis del *Green Deal* europeu que investigo actualment.`,
+                content: `**Context i descripció de l'evidència:**\nDurant la meva etapa com a professor a la Universidad de Los Andes (2009-2013, amb publicacions docents recents el 2023), vaig participar en el disseny i implementació de la metodologia RAIS (*Reproducción de un Ambiente de Innovación en el Salón de clase*). Aquesta estratègia d'Aprenentatge Basat en Productes (PBL) encoratjava els estudiants d'Enginyeria Química a desenvolupar un producte des de la idea inicial fins a l'escala de laboratori, incloent-hi l'anàlisi de tota la cadena de valor (reflectit en l'<a href="https://www.elsevier.es/es-revista-educacion-quimica-78-articulo-reproduccion-un-ambiente-innovacion-el-S0187893X16300283" target="_blank" class="underline decoration-red-300 underline-offset-4 hover:text-red-600 transition-colors">article publicat a *Educación Química* el 2016</a> i *Education for Chemical Engineers* el 2023).\n\n**Reflexió sobre l'aprenentatge assolit:**\nL'anàlisi d'aquesta evidència em fa veure que la motivació de l'alumne creix quan el coneixement s'aplica a una realitat tangible i industrial. Com a docent, vaig aprendre que el meu rol pot enfocar-se com a "facilitador" més que com a transmissor de teoria. El repte que em plantejo ara, i el que considero un pas més en la meva pràctica docent, és com traslladar aquesta experiència d'aula a la UdG, adaptant-la als nous paradigmes de sostenibilitat (economia circular i residus) propis del *Green Deal* europeu que investigo actualment.`,
                 competence: "Capacitat per dissenyar i aplicar metodologies d'aprenentatge actiu (PBL) que apropen el món professional a l'aula, fomentant la iniciativa de l'alumnat."
             },
             {
@@ -183,9 +183,56 @@
                 title: 'Lideratge, Direcció i Mentoria',
                 subtitle: 'Adaptant el guiatge a cada nivell formatiu',
                 image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2050&auto=format&fit=crop',
-                content: `**Context i descripció de l'evidència:**\nAquest bloc recull la meva experiència dirigint activitats de recerca en diferents nivells educatius: des dels Treballs Finals de Grau (2018-2019), fins a l'acompanyament com a co-mentor de les tesis doctorals a North Carolina State University (2023-2024).\n\n**Reflexió sobre l'aprenentatge assolit:**\nGuiar estudiants m'ha ofert una visió molt sincera i directa de la meva pràctica pedagògica. He après que la mentoria no és una "talla única". Amb els estudiants de grau, la meva tasca se centra més en bastir estructures clares (*scaffolding*). En canvi, amb els doctorands, el rol evoluciona cap a l'acompanyament en el debat d'hipòtesis, fomentant gradualment la seva pròpia autonomia. Aquest aprenentatge m'ajuda a adaptar-me millor a la diversitat d'estudiants.`,
+                content: `**Context i descripció de l'evidència:**\nAquest bloc recull la meva experiència dirigint activitats de recerca en diferents nivells educatius: des dels Treballs Finals de Grau (2018-2019), fins a l'acompanyament com a co-mentor de les tesis doctorals a North Carolina State University (2023-2024).\n\n**Reflexió sobre l'aprenentatge assolit:**\nGuiar estudiants m'ha ofert una visió molt sincera i directa de la meva pràctica pedagògica. He entès que la mentoria no és una "talla única". Amb els estudiants de grau, la meva tasca se centra més en bastir estructures clares (*scaffolding*). En canvi, amb els doctorands, el rol evoluciona cap a l'acompanyament en el debat d'hipòtesis, fomentant gradualment la seva pròpia autonomia. Aquest aprenentatge m'ajuda a adaptar-me millor a la diversitat d'estudiants.`,
                 competence: "Adaptabilitat del lideratge docent i capacitat per acompanyar, mentoritzar i guiar estudiants de diferents nivells acadèmics en el procés de recerca."
             },
+            // --- NEW DUFI MODULES ADDED HERE ---
+            {
+                id: 'unitat-4',
+                unit: 'Unitat 4',
+                title: 'Com fer classe a la universitat',
+                subtitle: 'Aplicació de la metodologia RAIS a Experimentació en Química',
+                image: 'https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?q=80&w=2070&auto=format&fit=crop',
+                content: `**1. Proposta i contextualització a l'aula (Laboratori)**\n\nEn el marc del mòdul *"Com fer classe a la universitat"* del programa DUFI, he replantejat les sessions pràctiques de l'assignatura **Experimentació en Química**. La proposta es basa en l'estratègia d'aprenentatge actiu anomenada **RAIS** (*Reproducción de un Ambiente de Innovación en el Salón de clase*), validada amb èxit en laboratoris de química segons les meves recerques prèvies (<a href="https://www.elsevier.es/es-revista-educacion-quimica-78-articulo-reproduccion-un-ambiente-innovacion-el-S0187893X16300283" target="_blank" class="underline decoration-red-300 underline-offset-4 hover:text-red-600 transition-colors">Márquez et al., 2016</a>).\n\nL'objectiu d'aquesta sessió és allunyar-nos del típic "laboratori de receptari" on l'estudiant només segueix instruccions mecàniques. Per fer-ho, el laboratori es transforma en una incubadora d'empreses. Els estudiants es divideixen en grups (empreses d'arrencada o *start-ups*) i reben un repte: **dissenyar, formular i produir un tensioactiu (sabó) innovador** (ex. a partir d'olis reciclats, amb additius naturals o per a usos específics industrials). El meu rol com a professor passa a ser el de *Director Executiu i Consultor*.\n\n**Desenvolupament de la sessió activa:** Durant les sessions de laboratori (Fase 3 de RAIS), els equipos no disposen d'un guió tancat pas a pas. Han de justificar prèviament els fonaments de la reacció de saponificació, l'estequiometria adequada i planificar ells mateixos el procediment experimental. Com a consultor, em moc per les poyates del laboratori supervisant la seguretat, qüestionant les seves decisions tècniques i proporcionant retroalimentació guiada mentre intenten sintetitzar el seu producte de manera autònoma.\n\n**2. Evidència del canvi (Abans vs. Després de la formació)**\n\n**ABANS:** Abans d'aquesta reflexió formativa, les pràctiques de laboratori eren mecanicistes. Entregava un manual tancat on es deia exactament quants grams de greix i sosa calien i a quina temperatura escalfar. Els estudiants barrejaven sense raonar, de forma autòmata, sovint sense entendre l'impacte d'alterar una variable física o química. L'avaluació es limitava a un informe descriptiu entregat al final de curs.\n\n**DESPRÉS:** Arran de la formació a la DUFI i l'aplicació conscient de la metodologia RAIS, **el focus al laboratori s'ha desplaçat cap a l'aprenentatge actiu ("aprendre a fer")**. Si l'emulsió es talla o el sabó no solidifica, els alumnes no em pregunten "què faig ara?", sinó que han de resoldre el problema tècnic en equip. L'avaluació esdevé totalment formativa i continuada: avaluo la seva planificació prèvia, la capacitat de treball col·laboratiu al laboratori, i la seva defensa del producte final davant de la classe, emulant el món professional.\n\n**3. Reflexió i Fonamentació del Canvi**\n\nAquest canvi metodològic està fonamentat en la teoria constructivista de l'aprenentatge (Díaz-Barriga i Hernández, 2002), on l'estudiant assoleix un aprenentatge molt més significatiu si ha de construir el procediment per resoldre un problema tangible, com la creació d'un producte d'interès industrial o domèstic.\n\nA més, d'acord amb l'informe Delors de la UNESCO (1996), la universitat ha de prioritzar l'*aprendre a fer* i l'*aprendre a viure junts*. Tal com documentem a <a href="https://www.elsevier.es/es-revista-educacion-quimica-78-articulo-reproduccion-un-ambiente-innovacion-el-S0187893X16300283" target="_blank" class="underline decoration-red-300 underline-offset-4 hover:text-red-600 transition-colors">Márquez et al. (2016)</a>, en aplicar RAIS en assignatures pràctiques (com el *Laboratori de Química Industrial* on es produïa sabó), la motivació de l'estudiantat creix de forma notòria en veure l'aplicació real de les operacions unitàries. Sobretot, fomenta l'aparició de **fortaleses del caràcter** o factors no-cognitius (Duckworth et al., 2007; Dweck, 2006) com la resiliència i la proactivitat, indispensables per fer front a la frustració d'un experiment fallit. Així, he aconseguit que "Experimentació en Química" passi de ser una assignatura purament instrumental a un entorn real d'innovació on es formen professionals crítics i capacitats.`,
+                competence: "Planificació, tutela i avaluació crítica de sessions pràctiques de laboratori mitjançant PBL (Aprenentatge per Productes), promovent el treball col·laboratiu, el pensament crític i la resiliència experimental."
+            },
+            {
+                id: 'unitat-5',
+                unit: 'Unitat 5',
+                title: 'Relacions en l’ecosistema docent',
+                subtitle: 'Tasques d\'avaluació i reflexions',
+                image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop',
+                content: `**Espai reservat per a les tasques d'avaluació de la Unitat 5.**\n\nAquí s'inclouran els materials treballats sobre l'ecosistema docent, com ara la interacció i comunicació assertiva amb l'estudiantat, la resolució de conflictes a l'aula, l'atenció a la diversitat i el treball coordinat amb la resta de l'equip docent de l'assignatura o titulació.`,
+                competence: "Gestió positiva del clima d'aula i col·laboració activa dins l'equip docent de la universitat."
+            },
+            {
+                id: 'unitat-6',
+                unit: 'Unitat 6',
+                title: 'Metodologies actives a la UdG',
+                subtitle: 'Tasques d\'avaluació i reflexions',
+                image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop',
+                content: `**Espai reservat per a les tasques d'avaluació de la Unitat 6.**\n\nAquesta secció recollirà les evidències d'implementació o disseny de metodologies centrades en l'aprenentatge de l'estudiant (Aprenentatge Basat en Problemes, Flipped Classroom, Treball Cooperatiu, etc.), adaptades al context específic i al marc docent de la Universitat de Girona.`,
+                competence: "Disseny i aplicació d'estratègies d'aprenentatge actiu per promoure un rol protagonista de l'estudiant."
+            },
+            {
+                id: 'unitat-7',
+                unit: 'Unitat 7',
+                title: 'Estratègies d’avaluació',
+                subtitle: 'Tasques d\'avaluació i reflexions',
+                image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop',
+                content: `**Espai reservat per a les tasques d'avaluació de la Unitat 7.**\n\nAquest mòdul emmagatzemarà la reflexió i les tasques relacionades amb l'avaluació formativa i sumativa: disseny de rúbriques, estratègies de *feedback* efectiu, avaluació per competències i alineament constructiu entre els resultats d'aprenentatge i els mètodes d'avaluació.`,
+                competence: "Concepció de l'avaluació com a procés d'aprenentatge mitjançant eines formatives i criteris transparents."
+            },
+            {
+                id: 'unitat-8',
+                unit: 'Unitat 8',
+                title: 'Recursos digitals per a la docència',
+                subtitle: 'Tasques d\'avaluació i reflexions',
+                image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=2074&auto=format&fit=crop',
+                content: `**Espai reservat per a les tasques d'avaluació de la Unitat 8.**\n\nFinalment, aquesta unitat allotjarà les tasques vinculades a l'ús de les Tecnologies de la Informació i la Comunicació (TIC) i Tecnologies per a l'Aprenentatge i el Coneixement (TAC), com el domini de la plataforma Moodle (La Meva UdG), eines d'interacció en línia i l'ús ètic de recursos digitals.`,
+                competence: "Integració efectiva d'eines i entorns digitals per enriquir i facilitar el procés d'ensenyament-aprenentatge."
+            },
+            // --- END NEW DUFI MODULES ---
             {
                 id: 'reflexio-general',
                 unit: 'Fase Final',
